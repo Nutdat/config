@@ -1,0 +1,8 @@
+{
+  "app_name": "MyCoolApp",
+  "debug": true,
+  "logger": {
+    "level": "info",
+    "path": "./logs/app.log"
+  }
+}
