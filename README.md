@@ -48,7 +48,7 @@ fmt.Println(c.Level, c.Path)
 ### Running the tests
 
 ```
-go test ./package/core
+go test ./core
 ```
 
 ### Struct
