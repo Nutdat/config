@@ -1,4 +1,4 @@
-# 🧩 Go Config Package
+# 🧩 Nut Config 
 
 A flexible configuration management utility for Go modules.  
 This package allows you to **register**, **persist**, and **load** configuration structs using simple JSON files.  

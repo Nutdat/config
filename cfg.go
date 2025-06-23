@@ -1,6 +1,6 @@
 package cfg
 
-import "github.com/WebPirat/nutdat-config/package/core"
+import "github.com/Nutdat/config/core"
 
 // Register exposes the core register functionality
 func Register[T any](name string, defaultCfg T) error {
