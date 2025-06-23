@@ -55,6 +55,6 @@ go test ./package/core
 
 ```
 ├── cfg.go            <- public API (Register, Load)
-├── /package/core     <- create.go, load.go, register.go
+├── /core             <- create.go, load.go, register.go
 ├── /example          <- demo with main.go
 ```
