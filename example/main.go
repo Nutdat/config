@@ -1,45 +1,12 @@
 package main
 
-import (
-	"fmt"
-
-	"github.com/Nutdat/config"
-)
-
-// Nested LoggerConfig
-type LoggerConfig struct {
-	Level string `json:"level"`
-	Path  string `json:"path"`
-}
-
-// Top-level AppConfig mit embedded LoggerConfig
-type AppConfig struct {
-	AppName string       `json:"app_name"`
-	Debug   bool         `json:"debug"`
-	Logger  LoggerConfig `json:"logger"`
-}
+import "fmt"
 
 func main() {
-	defaultConfig := AppConfig{
-		AppName: "MyCoolApp",
-		Debug:   true,
-		Logger: LoggerConfig{
-			Level: "info",
-			Path:  "./logs/app.log",
-		},
-	}
-
-	// Register mit verschachtelter Konfiguration
-	err := cfg.Register("app", defaultConfig)
-	if err != nil {
-		panic(err)
-	}
-
-	var loaded AppConfig
-	if err := cfg.Load("app", &loaded); err != nil {
-		panic(err)
-	}
-
+	loaded := LoadConfig()
+	loaded2 := LoadConfig()
+	fmt.Printf("cfg1 ptr: %p\n", loaded)
+	fmt.Printf("cfg2 ptr: %p\n", loaded2)
 	fmt.Println("== Loaded Config ==")
 	fmt.Printf("App Name: %s\n", loaded.AppName)
 	fmt.Printf("Debug:    %v\n", loaded.Debug)

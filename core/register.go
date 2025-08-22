@@ -1,7 +1,6 @@
 package core
 
 import (
-	"fmt"
 	"sync"
 )
 
@@ -16,7 +15,7 @@ func Register[T any](name string, defaultCfg T) error {
 
 	if _, exists := registry[name]; exists {
 		// Schon registriert → Fehler zurückgeben
-		return fmt.Errorf("config %q already registered", name)
+		return nil
 	}
 
 	registry[name] = defaultCfg
