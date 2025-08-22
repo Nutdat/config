@@ -9,7 +9,7 @@ import (
 
 func TestRegister_StoresDefaultAndCreatesFile(t *testing.T) {
     name := "test_register"
-    path := filepath.Join("./data/config", name+".json")
+    path := filepath.Join("./.Nutdat/config", name+".json")
     _ = os.Remove(path)
 
     type Config struct {
@@ -30,7 +30,7 @@ func TestRegister_StoresDefaultAndCreatesFile(t *testing.T) {
     mu.RUnlock()
 
     if !ok {
-        t.Fatal("config was not stored in registry")
+        t.Fatal("config was not store d in registry")
     }
 
     val, ok := stored.(Config)
